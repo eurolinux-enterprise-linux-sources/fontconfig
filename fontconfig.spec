@@ -3,15 +3,16 @@
 Summary: Font configuration and customization library
 Name: fontconfig
 Version: 2.8.0
-Release: 3%{?dist}
+Release: 5%{?dist}
 License: MIT
 Group: System Environment/Libraries
 Source: http://fontconfig.org/release/fontconfig-%{version}.tar.gz
 URL: http://fontconfig.org
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
-Source1: 25-no-bitmap-fedora.conf
+Source1: 25-no-bitmap-dist.conf
 Patch0:  fontconfig-zapfdingbats.patch
 Patch1:  fontconfig-nepali.patch
+Patch2:  fontconfig-1035416.patch
 
 BuildRequires: gawk
 BuildRequires: expat-devel
@@ -48,6 +49,7 @@ will use fontconfig.
 %setup -q
 %patch0 -p1 -b .zapfdingbats
 %patch1 -p1 -b .nepali
+%patch2 -p1 -b .sigbus
 
 %build
 
@@ -135,6 +137,12 @@ fi
 %{_mandir}/man3/*
 
 %changelog
+* Wed May 21 2014 Akira TAGOH <tagoh@redhat.com> - 2.8.0-5
+- Rename 25-no-bitmap-fedora.conf to 25-no-bitmap-dist.conf. (#1099546)
+
+* Fri Apr 25 2014 Akira TAGOH <tagoh@redhat.com> - 2.8.0-4
+- Fix SIGBUS when the cache directory is on NFS. (#1035416)
+
 * Tue Jun 29 2010 Marek Kasik <mkasik@redhat.com> - 2.8.0-3
 - Modify Nepali orthography
 - Resolves: #586898

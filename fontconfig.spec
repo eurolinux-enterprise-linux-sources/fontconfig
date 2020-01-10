@@ -3,7 +3,7 @@
 Summary:	Font configuration and customization library
 Name:		fontconfig
 Version:	2.10.95
-Release:	5%{?dist}
+Release:	7%{?dist}
 # src/ftglue.[ch] is in Public Domain
 # src/fccache.c contains Public Domain code
 # fc-case/CaseFolding.txt is in the UCD
@@ -145,6 +145,12 @@ fi
 %doc fontconfig-devel.txt fontconfig-devel
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 2.10.95-7
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 2.10.95-6
+- Mass rebuild 2013-12-27
+
 * Tue Oct  8 2013 Akira TAGOH <tagoh@redhat.com> - 2.10.95-5
 - Fix the race condition issue on updating cache (#1011510)
 - Fix crash issue in FcFontSort()

@@ -3,7 +3,7 @@
 Summary:	Font configuration and customization library
 Name:		fontconfig
 Version:	2.10.95
-Release:	11%{?dist}
+Release:	5%{?dist}
 # src/ftglue.[ch] is in Public Domain
 # src/fccache.c contains Public Domain code
 # fc-case/CaseFolding.txt is in the UCD
@@ -22,9 +22,6 @@ Patch2:		fontconfig-fix-memleak.patch
 Patch3:		fontconfig-copy-all-value.patch
 Patch4:		fontconfig-fix-crash-on-fcfontsort.patch
 Patch5:		fontconfig-fix-race-condition.patch
-Patch6:		fontconfig-update-45-latin.patch
-Patch7:		fontconfig-validate-offset-in-cache.patch
-Patch8:		fontconfig-offset-in-elts.patch
 
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel >= %{freetype_version}
@@ -33,7 +30,6 @@ BuildRequires:	fontpackages-devel
 Requires:	fontpackages-filesystem
 Requires(pre):	freetype
 Requires(post):	grep coreutils
-Requires:	font(:lang=en)
 
 %description
 Fontconfig is designed to locate fonts within the
@@ -72,9 +68,6 @@ which is useful for developing applications that uses fontconfig.
 %patch3 -p1 -b .copy-all
 %patch4 -p1 -b .fix-crash
 %patch5 -p1 -b .fix-race
-%patch6 -p1 -b .update-45-latin
-%patch7 -p1 -b .validate-offset
-%patch8 -p1 -b .offset-elts
 cp %{SOURCE2} doc/
 
 %build
@@ -152,24 +145,6 @@ fi
 %doc fontconfig-devel.txt fontconfig-devel
 
 %changelog
-* Fri Feb 24 2017 Akira TAGOH <tagoh@redhat.com> - 2.10.95-11
-- Add Requires: font(:lang=en) (#1403957)
-
-* Fri Sep 23 2016 Akira TAGOH <tagoh@redhat.com> - 2.10.95-10
-- Fix a regression in the previous change. (#1355930)
-
-* Fri Aug  5 2016 Akira TAGOH <tagoh@redhat.com> - 2.10.95-9
-- CVE-2016-5384: Validate offsets in cache files properly. (#1355930)
-
-* Fri Jun 10 2016 Akira TAGOH <tagoh@redhat.com> - 2.10.95-8
-- Update 45-latin.conf to add some hints to fall back for Windows fonts (#1073460)
-
-* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 2.10.95-7
-- Mass rebuild 2014-01-24
-
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 2.10.95-6
-- Mass rebuild 2013-12-27
-
 * Tue Oct  8 2013 Akira TAGOH <tagoh@redhat.com> - 2.10.95-5
 - Fix the race condition issue on updating cache (#1011510)
 - Fix crash issue in FcFontSort()

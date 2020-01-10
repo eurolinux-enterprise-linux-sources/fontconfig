@@ -21,21 +21,22 @@
 #  TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 #  PERFORMANCE OF THIS SOFTWARE.
 
-SUBDIRS=fontconfig fc-case fc-lang fc-glyphname src \
-	fc-cache fc-cat fc-list fc-match fc-pattern fc-query fc-scan \
-	fc-validate conf.d test
+SUBDIRS=fontconfig fc-case fc-lang src \
+	fc-cache fc-cat fc-conflist fc-list fc-match \
+	fc-pattern fc-query fc-scan fc-validate conf.d \
+	its po po-conf test
 if ENABLE_DOCS
 SUBDIRS += doc
 endif
 
 ACLOCAL_AMFLAGS = -I m4
 
-EXTRA_DIST = \
-        fontconfig.pc.in \
-        fonts.conf.in \
+EXTRA_DIST = config.rpath  \
+	fontconfig.pc.in \
+	fonts.conf.in \
 	fonts.dtd \
-        fontconfig.spec.in \
-        fontconfig.spec \
+	fontconfig.spec.in \
+	fontconfig.spec \
 	fontconfig-zip.in \
 	config-fixups.h
 CLEANFILES = fonts.conf
@@ -90,12 +91,14 @@ $(srcdir)/ChangeLog:
 
 .PHONY: ChangeLog
 
+FC_CONFIGDIR = $(subst $(BASECONFIGDIR)/,,$(CONFIGDIR))
+
 fonts.conf: fonts.conf.in Makefile
 	sed \
 		-e 's,@FC_CACHEDIR\@,$(FC_CACHEDIR),g' \
 		-e 's,@FC_DEFAULT_FONTS\@,$(FC_DEFAULT_FONTS),g' \
 		-e 's,@FC_FONTPATH\@,$(FC_FONTPATH),g' \
-		-e 's,@CONFIGDIR\@,$(CONFIGDIR),g' \
+		-e 's,@CONFIGDIR\@,$(FC_CONFIGDIR),g' \
 		-e 's,@PACKAGE\@,$(PACKAGE),g' \
 		-e 's,@VERSION\@,$(VERSION),g' \
 		$(srcdir)/$@.in > $@.tmp && \

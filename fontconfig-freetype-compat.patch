@@ -1,0 +1,33 @@
+diff -pruN fontconfig-2.13.0.orig/configure.ac fontconfig-2.13.0/configure.ac
+--- fontconfig-2.13.0.orig/configure.ac	2018-06-08 18:56:53.882676862 +0900
++++ fontconfig-2.13.0/configure.ac	2018-06-08 19:01:14.514726892 +0900
+@@ -319,6 +319,10 @@ fontconfig_save_cflags="$CFLAGS"
+ LIBS="$LIBS $FREETYPE_LIBS"
+ CFLAGS="$CFLAGS $FREETYPE_CFLAGS"
+ AC_CHECK_FUNCS(FT_Get_BDF_Property FT_Get_PS_Font_Info FT_Has_PS_Glyph_Names FT_Get_X11_Font_Format FT_Done_MM_Var)
++AC_CHECK_MEMBERS([TT_OS2.usLowerOpticalPointSize, TT_OS2.usUpperOpticalPointSize], [], [], [[
++#include <ft2build.h>
++#include FT_FREETYPE_H
++#include FT_TRUETYPE_TABLES_H]])
+ 
+ AC_COMPILE_IFELSE([AC_LANG_SOURCE([[
+ 	#include <ft2build.h>
+diff -pruN fontconfig-2.13.0.orig/src/fcfreetype.c fontconfig-2.13.0/src/fcfreetype.c
+--- fontconfig-2.13.0.orig/src/fcfreetype.c	2018-03-02 13:27:09.000000000 +0900
++++ fontconfig-2.13.0/src/fcfreetype.c	2018-06-08 19:02:17.328703890 +0900
+@@ -1721,6 +1721,7 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 	free (complex_);
+     }
+ 
++#if defined (HAVE_TT_OS2_USUPPEROPTICALPOINTSIZE) && defined (HAVE_TT_OS2_USLOWEROPTICALPOINTSIZE)
+     if (!variable_size && os2 && os2->version >= 0x0005 && os2->version != 0xffff)
+     {
+ 	double lower_size, upper_size;
+@@ -1746,6 +1747,7 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 	    FcRangeDestroy (r);
+ 	}
+     }
++#endif
+ 
+     /*
+      * Type 1: Check for FontInfo dictionary information

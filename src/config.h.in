@@ -6,8 +6,15 @@
 /* The normal alignment of `double', in bytes. */
 #undef ALIGNOF_DOUBLE
 
+/* The normal alignment of `void *', in bytes. */
+#undef ALIGNOF_VOID_P
+
 /* Use libxml2 instead of Expat */
 #undef ENABLE_LIBXML2
+
+/* Define to 1 if translation of program messages to the user's native
+   language is requested. */
+#undef ENABLE_NLS
 
 /* Additional font directories */
 #undef FC_ADD_FONTS
@@ -18,6 +25,9 @@
 /* System font directory */
 #undef FC_DEFAULT_FONTS
 
+/* The type of len parameter of the gperf hash/lookup function */
+#undef FC_GPERF_SIZE_T
+
 /* Define to nothing if C supports flexible array members, and to 1 if it does
    not. That way, with a declaration like `struct s { int n; double
    d[FLEXIBLE_ARRAY_MEMBER]; };', the struct hack can be used with pre-C99
@@ -26,6 +36,21 @@
    instead. Don't use 'offsetof (struct s, d[0])', as this doesn't work with
    MSVC and with C++ compilers. */
 #undef FLEXIBLE_ARRAY_MEMBER
+
+/* Gettext package */
+#undef GETTEXT_PACKAGE
+
+/* Define to 1 if you have the Mac OS X function CFLocaleCopyCurrent in the
+   CoreFoundation framework. */
+#undef HAVE_CFLOCALECOPYCURRENT
+
+/* Define to 1 if you have the Mac OS X function CFPreferencesCopyAppValue in
+   the CoreFoundation framework. */
+#undef HAVE_CFPREFERENCESCOPYAPPVALUE
+
+/* Define if the GNU dcgettext() function is already present or preinstalled.
+   */
+#undef HAVE_DCGETTEXT
 
 /* Define to 1 if you have the <dirent.h> header file, and it defines `DIR'.
    */
@@ -46,14 +71,11 @@
 /* Define to 1 if you have the `fstatvfs' function. */
 #undef HAVE_FSTATVFS
 
-/* FT_Bitmap_Size structure includes y_ppem field */
-#undef HAVE_FT_BITMAP_SIZE_Y_PPEM
+/* Define to 1 if you have the `FT_Done_MM_Var' function. */
+#undef HAVE_FT_DONE_MM_VAR
 
 /* Define to 1 if you have the `FT_Get_BDF_Property' function. */
 #undef HAVE_FT_GET_BDF_PROPERTY
-
-/* Define to 1 if you have the `FT_Get_Next_Char' function. */
-#undef HAVE_FT_GET_NEXT_CHAR
 
 /* Define to 1 if you have the `FT_Get_PS_Font_Info' function. */
 #undef HAVE_FT_GET_PS_FONT_INFO
@@ -63,9 +85,6 @@
 
 /* Define to 1 if you have the `FT_Has_PS_Glyph_Names' function. */
 #undef HAVE_FT_HAS_PS_GLYPH_NAMES
-
-/* Define to 1 if you have the `FT_Select_Size' function. */
-#undef HAVE_FT_SELECT_SIZE
 
 /* Define to 1 if you have the `getexecname' function. */
 #undef HAVE_GETEXECNAME
@@ -81,6 +100,12 @@
 
 /* Define to 1 if you have the `getprogname' function. */
 #undef HAVE_GETPROGNAME
+
+/* Define if the GNU gettext() function is already present or preinstalled. */
+#undef HAVE_GETTEXT
+
+/* Define if you have the iconv() function and it works. */
+#undef HAVE_ICONV
 
 /* Have Intel __sync_* atomic primitives */
 #undef HAVE_INTEL_ATOMIC_PRIMITIVES
@@ -99,6 +124,9 @@
 
 /* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H
+
+/* Define to 1 if you have the `mkdtemp' function. */
+#undef HAVE_MKDTEMP
 
 /* Define to 1 if you have the `mkostemp' function. */
 #undef HAVE_MKOSTEMP
@@ -133,27 +161,8 @@
 /* Define to 1 if you have the `rand_r' function. */
 #undef HAVE_RAND_R
 
-/* Define to 1 if you have the `regcomp' function. */
-#undef HAVE_REGCOMP
-
-/* Define to 1 if you have the `regerror' function. */
-#undef HAVE_REGERROR
-
-/* Define to 1 if you have the `regexec' function. */
-#undef HAVE_REGEXEC
-
-/* Define to 1 if you have the <regex.h> header file. */
-#undef HAVE_REGEX_H
-
-/* Define to 1 if you have the `regfree' function. */
-#undef HAVE_REGFREE
-
-/* Define to 1 if you have the 'scandir' function. */
-#undef HAVE_SCANDIR
-
-/* Define to 1 if you have the 'scandir' function with int (* compar)(const
-   void *, const void *) */
-#undef HAVE_SCANDIR_VOID_P
+/* Define to 1 if you have the `readlink' function. */
+#undef HAVE_READLINK
 
 /* Define to 1 if you have the <sched.h> header file. */
 #undef HAVE_SCHED_H
@@ -191,6 +200,9 @@
 /* Define to 1 if `f_fstypename' is a member of `struct statvfs'. */
 #undef HAVE_STRUCT_STATVFS_F_FSTYPENAME
 
+/* Define to 1 if `st_mtim' is a member of `struct stat'. */
+#undef HAVE_STRUCT_STAT_ST_MTIM
+
 /* Define to 1 if you have the <sys/dir.h> header file, and it defines `DIR'.
    */
 #undef HAVE_SYS_DIR_H
@@ -207,6 +219,9 @@
 
 /* Define to 1 if you have the <sys/statfs.h> header file. */
 #undef HAVE_SYS_STATFS_H
+
+/* Define to 1 if you have the <sys/statvfs.h> header file. */
+#undef HAVE_SYS_STATVFS_H
 
 /* Define to 1 if you have the <sys/stat.h> header file. */
 #undef HAVE_SYS_STAT_H
@@ -235,8 +250,7 @@
 /* Define to 1 if you have the `_mktemp_s' function. */
 #undef HAVE__MKTEMP_S
 
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
 #undef LT_OBJDIR
 
 /* Name of package */
@@ -287,9 +301,6 @@
 
 /* Use iconv. */
 #undef USE_ICONV
-
-/* Use regex */
-#undef USE_REGEX
 
 /* Enable extensions on AIX 3, Interix.  */
 #ifndef _ALL_SOURCE

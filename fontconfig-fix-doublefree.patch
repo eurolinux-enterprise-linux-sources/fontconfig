@@ -1,0 +1,27 @@
+From 14c23a5715c529be175d8d6152cabd4ddad4e981 Mon Sep 17 00:00:00 2001
+From: Akira TAGOH <akira@tagoh.org>
+Date: Fri, 25 May 2018 15:20:10 +0900
+Subject: [PATCH 6/7] Fix double-free
+
+---
+ src/fcxml.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/src/fcxml.c b/src/fcxml.c
+index c69ee50..4f984a7 100644
+--- a/src/fcxml.c
++++ b/src/fcxml.c
+@@ -2780,7 +2780,10 @@ FcParseAcceptRejectFont (FcConfigParse *parse, FcElement element)
+ 	    else
+ 	    {
+ 		if (parse->scanOnly && vstack->u.string)
++		{
+ 		    FcStrFree (vstack->u.string);
++		    vstack->tag = FcVStackNone;
++		}
+ 	    }
+ 	    break;
+ 	case FcVStackPattern:
+-- 
+2.17.1
+

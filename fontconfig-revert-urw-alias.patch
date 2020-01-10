@@ -1,0 +1,213 @@
+From 2084b76bea78f9a41349de57d76134efd5174d96 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
+Date: Fri, 15 Sep 2017 22:52:52 +0200
+Subject: [PATCH 324/491] build: Remove references to deleted file
+
+Commit cc67d7df17 removed 30-urw-aliases.conf, so don't try to
+install it.
+---
+ conf.d/Makefile.am | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/conf.d/Makefile.am b/conf.d/Makefile.am
+index fd50a5d..ff03fb2 100644
+--- a/conf.d/Makefile.am
++++ b/conf.d/Makefile.am
+@@ -29,7 +29,6 @@ CONF_LINKS = \
+ 	10-hinting-$(PREFERRED_HINTING).conf	\
+ 	10-scale-bitmap-fonts.conf \
+ 	20-unhint-small-vera.conf \
+-	30-urw-aliases.conf \
+ 	30-metric-aliases.conf \
+ 	40-nonlatin.conf \
+ 	45-generic.conf \
+@@ -70,7 +69,6 @@ template_DATA =				\
+ 	11-lcdfilter-light.conf		\
+ 	20-unhint-small-vera.conf	\
+ 	25-unhint-nonlatin.conf		\
+-	30-urw-aliases.conf		\
+ 	30-metric-aliases.conf		\
+ 	40-nonlatin.conf		\
+ 	45-generic.conf			\
+-- 
+2.17.1
+
+From cc67d7df172431cb345ed42c27eb852e2ee65ae2 Mon Sep 17 00:00:00 2001
+From: "David Kaspar [Dee'Kej]" <dkaspar@redhat.com>
+Date: Fri, 1 Sep 2017 11:05:16 +0200
+Subject: [PATCH 323/491] conf.d: Drop aliases for (URW)++ fonts
+
+  They have become a part of (URW)++ upstream release now:
+  https://github.com/ArtifexSoftware/urw-base35-fonts/tree/master/fontconfig
+---
+ conf.d/30-metric-aliases.conf | 29 +++--------------------------
+ conf.d/30-urw-aliases.conf    | 33 ---------------------------------
+ 2 files changed, 3 insertions(+), 59 deletions(-)
+ delete mode 100644 conf.d/30-urw-aliases.conf
+
+diff --git a/conf.d/30-metric-aliases.conf b/conf.d/30-metric-aliases.conf
+index 1f0778d..c755c5e 100644
+--- a/conf.d/30-metric-aliases.conf
++++ b/conf.d/30-metric-aliases.conf
+@@ -44,6 +44,9 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 3) Alias each generic to its specifics.
+    e.g. Arial to Liberation Sans, Arimo, Albany, and Albany AMT
+ 
++NOTE: The (URW)++ fonts mappings of generics to specifics were removed, because
++      upstream now includes them in their release of (URW)++ Core Font Set here:
++      https://github.com/ArtifexSoftware/urw-base35-fonts/tree/master/fontconfig
+ -->
+ 
+ <!-- Map specifics to generics -->
+@@ -308,7 +311,6 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  </default>
+ 	</alias>
+ 
+-
+ 	<!-- Microsoft -->
+ 	<alias binding="same">
+ 	  <family>Arimo</family>
+@@ -460,7 +462,6 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  </default>
+ 	</alias>
+ 
+-
+ 	<!-- Microsoft -->
+ 	<alias>
+ 	  <family>Arial</family>
+@@ -490,8 +491,6 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  </default>
+ 	</alias>
+ 
+-
+-
+ <!-- Map generics to specifics -->
+ 
+ 	<!-- PostScript -->
+@@ -499,8 +498,6 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  <family>Helvetica</family>
+ 	  <accept>
+ 	  <family>TeX Gyre Heros</family>
+-	  <family>Nimbus Sans</family>
+-	  <family>Nimbus Sans L</family>
+ 	  </accept>
+ 	</alias>
+ 
+@@ -508,7 +505,6 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  <family>Helvetica Narrow</family>
+ 	  <accept>
+ 	  <family>TeX Gyre Heros Cn</family>
+-	  <family>Nimbus Sans Narrow</family>
+ 	  </accept>
+ 	</alias>
+ 
+@@ -516,8 +512,6 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  <family>Times</family>
+ 	  <accept>
+ 	  <family>TeX Gyre Termes</family>
+-	  <family>Nimbus Roman</family>
+-	  <family>Nimbus Roman No9 L</family>
+ 	  </accept>
+ 	</alias>
+ 
+@@ -525,9 +519,6 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  <family>Courier</family>
+ 	  <accept>
+ 	  <family>TeX Gyre Cursor</family>
+-	  <family>Nimbus Mono PS</family>
+-	  <family>Nimbus Mono</family>
+-	  <family>Nimbus Mono L</family>
+ 	  </accept>
+ 	</alias>
+ 
+@@ -535,8 +526,6 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  <family>ITC Avant Garde Gothic</family>
+ 	  <accept>
+ 	  <family>TeX Gyre Adventor</family>
+-	  <family>URW Gothic</family>
+-	  <family>URW Gothic L</family>
+ 	  </accept>
+ 	</alias>
+ 
+@@ -545,9 +534,6 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  <accept>
+ 	  <family>Bookman Old Style</family>
+ 	  <family>TeX Gyre Bonum</family>
+-	  <family>URW Bookman</family>
+-	  <family>Bookman URW</family>
+-	  <family>URW Bookman L</family>
+ 	  </accept>
+ 	</alias>
+ 
+@@ -555,9 +541,6 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  <family>ITC Zapf Chancery</family>
+ 	  <accept>
+ 	  <family>TeX Gyre Chorus</family>
+-	  <family>Z003</family>
+-	  <family>Chancery URW</family>
+-	  <family>URW Chancery L</family>
+ 	  </accept>
+ 	</alias>
+ 
+@@ -566,9 +549,6 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  <accept>
+ 	  <family>Palatino Linotype</family>
+ 	  <family>TeX Gyre Pagella</family>
+-	  <family>P052</family>
+-	  <family>Palladio URW</family>
+-	  <family>URW Palladio L</family>
+ 	  </accept>
+ 	</alias>
+ 
+@@ -577,9 +557,6 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  <accept>
+ 	  <family>Century Schoolbook</family>
+ 	  <family>TeX Gyre Schola</family>
+-	  <family>C059</family>
+-	  <family>Century SchoolBook URW</family>
+-	  <family>Century Schoolbook L</family>
+ 	  </accept>
+ 	</alias>
+ 
+diff --git a/conf.d/30-urw-aliases.conf b/conf.d/30-urw-aliases.conf
+deleted file mode 100644
+index cfde071..0000000
+--- a/conf.d/30-urw-aliases.conf
++++ /dev/null
+@@ -1,33 +0,0 @@
+-<?xml version="1.0"?>
+-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+-<fontconfig>
+-<!--
+-  URW provides metric and shape compatible fonts for some Adobe families.
+-  Most of these are handled in 30-metric-aliases.conf.
+-  -->
+-	<alias binding="same">
+-	  <family>Zapf Dingbats</family>
+-	  <accept>
+-	    <family>D050000L</family>
+-	    <family>Dingbats</family>
+-	  </accept>
+-	</alias>
+-	<alias binding="same">
+-	  <family>ITC Zapf Dingbats</family>
+-	  <accept>
+-	    <family>D050000L</family>
+-	    <family>Dingbats</family>
+-	  </accept>
+-	</alias>
+-	<match target="pattern">
+-	  <test name="family" compare="eq" ignore-blanks="true">
+-	    <string>Symbol</string>
+-	  </test>
+-	  <edit name="family" mode="append" binding="same">
+-	    <string>Standard Symbols PS</string>
+-	  </edit>
+-	  <edit name="family" mode="append" binding="same">
+-	    <string>Standard Symbols L</string>
+-	  </edit>
+-	</match>
+-</fontconfig>
+-- 
+2.17.1
+

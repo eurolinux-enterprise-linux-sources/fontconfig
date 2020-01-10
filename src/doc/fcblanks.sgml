@@ -25,6 +25,7 @@
 	<refmeta>
 	    <refentrytitle>FcBlanksCreate</refentrytitle>
 	    <manvolnum>3</manvolnum>
+	    <refmiscinfo class="software">Fontconfig &version;</refmiscinfo>
 	</refmeta>
 	<refnamediv>
 	    <refname>FcBlanksCreate</refname>
@@ -43,12 +44,8 @@
 	</refsynopsisdiv>
 	<refsect1><title>Description</title>
 	    <para>
-Creates an empty FcBlanks object.
-	    </para>
-	</refsect1>
-	<refsect1><title>Version</title>
-	    <para>
-Fontconfig version &version;
+FcBlanks is deprecated.
+This function always returns NULL.
 	    </para>
 	</refsect1>
     </refentry>
@@ -79,6 +76,7 @@ Fontconfig version &version;
 	<refmeta>
 	    <refentrytitle>FcBlanksDestroy</refentrytitle>
 	    <manvolnum>3</manvolnum>
+	    <refmiscinfo class="software">Fontconfig &version;</refmiscinfo>
 	</refmeta>
 	<refnamediv>
 	    <refname>FcBlanksDestroy</refname>
@@ -97,12 +95,8 @@ Fontconfig version &version;
 	</refsynopsisdiv>
 	<refsect1><title>Description</title>
 	    <para>
-Destroys an FcBlanks object, freeing any associated memory.
-	    </para>
-	</refsect1>
-	<refsect1><title>Version</title>
-	    <para>
-Fontconfig version &version;
+FcBlanks is deprecated.
+This function does nothing.
 	    </para>
 	</refsect1>
     </refentry>
@@ -133,6 +127,7 @@ Fontconfig version &version;
 	<refmeta>
 	    <refentrytitle>FcBlanksAdd</refentrytitle>
 	    <manvolnum>3</manvolnum>
+	    <refmiscinfo class="software">Fontconfig &version;</refmiscinfo>
 	</refmeta>
 	<refnamediv>
 	    <refname>FcBlanksAdd</refname>
@@ -152,13 +147,8 @@ Fontconfig version &version;
 	</refsynopsisdiv>
 	<refsect1><title>Description</title>
 	    <para>
-Adds a single character to an FcBlanks object, returning FcFalse
-if this process ran out of memory.
-	    </para>
-	</refsect1>
-	<refsect1><title>Version</title>
-	    <para>
-Fontconfig version &version;
+FcBlanks is deprecated.
+This function always returns FALSE.
 	    </para>
 	</refsect1>
     </refentry>
@@ -189,6 +179,7 @@ Fontconfig version &version;
 	<refmeta>
 	    <refentrytitle>FcBlanksIsMember</refentrytitle>
 	    <manvolnum>3</manvolnum>
+	    <refmiscinfo class="software">Fontconfig &version;</refmiscinfo>
 	</refmeta>
 	<refnamediv>
 	    <refname>FcBlanksIsMember</refname>
@@ -208,13 +199,8 @@ Fontconfig version &version;
 	</refsynopsisdiv>
 	<refsect1><title>Description</title>
 	    <para>
-Returns whether the specified FcBlanks object contains the indicated Unicode
-value.
-	    </para>
-	</refsect1>
-	<refsect1><title>Version</title>
-	    <para>
-Fontconfig version &version;
+FcBlanks is deprecated.
+This function always returns FALSE.
 	    </para>
 	</refsect1>
     </refentry>

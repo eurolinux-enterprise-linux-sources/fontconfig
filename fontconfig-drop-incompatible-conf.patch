@@ -1,0 +1,525 @@
+diff -pruN fontconfig-2.13.0.orig/conf.d/10-autohint.conf fontconfig-2.13.0/conf.d/10-autohint.conf
+--- fontconfig-2.13.0.orig/conf.d/10-autohint.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/10-autohint.conf	2018-06-08 17:56:13.942291063 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Enable autohinter</description>
+ <!--  Use the Autohinter --> 
+   <match target="pattern">
+     <!--
+diff -pruN fontconfig-2.13.0.orig/conf.d/10-hinting-full.conf fontconfig-2.13.0/conf.d/10-hinting-full.conf
+--- fontconfig-2.13.0.orig/conf.d/10-hinting-full.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/10-hinting-full.conf	2018-06-08 17:56:19.729380613 +0900
+@@ -1,12 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Set hintfull to hintstyle</description>
+-
+   <match target="pattern">
+     <!--
+       This configuration is available on the major desktop environments.
+diff -pruN fontconfig-2.13.0.orig/conf.d/10-hinting-medium.conf fontconfig-2.13.0/conf.d/10-hinting-medium.conf
+--- fontconfig-2.13.0.orig/conf.d/10-hinting-medium.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/10-hinting-medium.conf	2018-06-08 17:56:24.966461652 +0900
+@@ -1,12 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Set hintmedium to hintstyle</description>
+-
+   <match target="pattern">
+     <!--
+       This configuration is available on the major desktop environments.
+diff -pruN fontconfig-2.13.0.orig/conf.d/10-hinting-none.conf fontconfig-2.13.0/conf.d/10-hinting-none.conf
+--- fontconfig-2.13.0.orig/conf.d/10-hinting-none.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/10-hinting-none.conf	2018-06-08 17:56:29.968539055 +0900
+@@ -1,12 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Set hintnone to hintstyle</description>
+-
+   <match target="pattern">
+     <!--
+       This configuration is available on the major desktop environments.
+diff -pruN fontconfig-2.13.0.orig/conf.d/10-hinting-slight.conf fontconfig-2.13.0/conf.d/10-hinting-slight.conf
+--- fontconfig-2.13.0.orig/conf.d/10-hinting-slight.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/10-hinting-slight.conf	2018-06-08 17:56:34.839614432 +0900
+@@ -1,12 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Set hintslight to hintstyle</description>
+-
+   <match target="pattern">
+     <!--
+       This configuration is available on the major desktop environments.
+diff -pruN fontconfig-2.13.0.orig/conf.d/10-no-sub-pixel.conf fontconfig-2.13.0/conf.d/10-no-sub-pixel.conf
+--- fontconfig-2.13.0.orig/conf.d/10-no-sub-pixel.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/10-no-sub-pixel.conf	2018-06-08 17:56:40.138696429 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Disable sub-pixel rendering</description>
+ <!--  Disable sub-pixel rendering --> 
+   <match target="pattern">
+     <!--
+diff -pruN fontconfig-2.13.0.orig/conf.d/10-scale-bitmap-fonts.conf fontconfig-2.13.0/conf.d/10-scale-bitmap-fonts.conf
+--- fontconfig-2.13.0.orig/conf.d/10-scale-bitmap-fonts.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/10-scale-bitmap-fonts.conf	2018-06-08 17:56:44.835769114 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Bitmap scaling</description>
+ <!--
+   If font is bitmap, calculate scale factor.
+   Note that color bitmap fonts have scalable=true, while
+diff -pruN fontconfig-2.13.0.orig/conf.d/10-sub-pixel-bgr.conf fontconfig-2.13.0/conf.d/10-sub-pixel-bgr.conf
+--- fontconfig-2.13.0.orig/conf.d/10-sub-pixel-bgr.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/10-sub-pixel-bgr.conf	2018-06-08 17:56:49.304838268 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Enable sub-pixel rendering with the BGR stripes layout</description>
+ <!--  Enable sub-pixel rendering --> 
+   <match target="pattern">
+     <!--
+diff -pruN fontconfig-2.13.0.orig/conf.d/10-sub-pixel-rgb.conf fontconfig-2.13.0/conf.d/10-sub-pixel-rgb.conf
+--- fontconfig-2.13.0.orig/conf.d/10-sub-pixel-rgb.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/10-sub-pixel-rgb.conf	2018-06-08 17:56:53.746907005 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Enable sub-pixel rendering with the RGB stripes layout</description>
+ <!--  Enable sub-pixel rendering --> 
+   <match target="pattern">
+     <!--
+diff -pruN fontconfig-2.13.0.orig/conf.d/10-sub-pixel-vbgr.conf fontconfig-2.13.0/conf.d/10-sub-pixel-vbgr.conf
+--- fontconfig-2.13.0.orig/conf.d/10-sub-pixel-vbgr.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/10-sub-pixel-vbgr.conf	2018-06-08 17:56:58.421979349 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Enable sub-pixel rendering with the vertical BGR stripes layout</description>
+ <!--  Enable sub-pixel rendering --> 
+   <match target="pattern">
+     <!--
+diff -pruN fontconfig-2.13.0.orig/conf.d/10-sub-pixel-vrgb.conf fontconfig-2.13.0/conf.d/10-sub-pixel-vrgb.conf
+--- fontconfig-2.13.0.orig/conf.d/10-sub-pixel-vrgb.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/10-sub-pixel-vrgb.conf	2018-06-08 17:57:02.654044835 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Enable sub-pixel rendering with the vertical RGB stripes layout</description>
+ <!--  Enable sub-pixel rendering --> 
+   <match target="pattern">
+     <!--
+diff -pruN fontconfig-2.13.0.orig/conf.d/10-unhinted.conf fontconfig-2.13.0/conf.d/10-unhinted.conf
+--- fontconfig-2.13.0.orig/conf.d/10-unhinted.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/10-unhinted.conf	2018-06-08 17:57:06.878110200 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Disable hinting</description>
+ <!--  Disable hinting --> 
+   <match target="pattern">
+     <!--
+diff -pruN fontconfig-2.13.0.orig/conf.d/11-lcdfilter-default.conf fontconfig-2.13.0/conf.d/11-lcdfilter-default.conf
+--- fontconfig-2.13.0.orig/conf.d/11-lcdfilter-default.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/11-lcdfilter-default.conf	2018-06-08 17:57:11.396180113 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Use lcddefault as default for LCD filter</description>
+ <!--  Use lcddefault as default for LCD filter -->
+   <match target="pattern">
+     <!--
+diff -pruN fontconfig-2.13.0.orig/conf.d/11-lcdfilter-legacy.conf fontconfig-2.13.0/conf.d/11-lcdfilter-legacy.conf
+--- fontconfig-2.13.0.orig/conf.d/11-lcdfilter-legacy.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/11-lcdfilter-legacy.conf	2018-06-08 17:57:15.798248231 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Use lcdlegacy as default for LCD filter</description>
+ <!--  Use lcdlegacy as default for LCD filter -->
+   <match target="pattern">
+     <!--
+diff -pruN fontconfig-2.13.0.orig/conf.d/11-lcdfilter-light.conf fontconfig-2.13.0/conf.d/11-lcdfilter-light.conf
+--- fontconfig-2.13.0.orig/conf.d/11-lcdfilter-light.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/11-lcdfilter-light.conf	2018-06-08 17:57:20.037313826 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Use lcdlight as default for LCD filter</description>
+ <!--  Use lcdlight as default for LCD filter -->
+   <match target="pattern">
+     <!--
+diff -pruN fontconfig-2.13.0.orig/conf.d/20-unhint-small-vera.conf fontconfig-2.13.0/conf.d/20-unhint-small-vera.conf
+--- fontconfig-2.13.0.orig/conf.d/20-unhint-small-vera.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/20-unhint-small-vera.conf	2018-06-08 17:57:24.272379360 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Disable hinting for Bitstream Vera fonts when the size is less than 8ppem</description>
+ <!-- 
+ 	The Bitstream Vera fonts have GASP entries suggesting that hinting be
+ 	disabled below 8 ppem, but FreeType ignores those, preferring to use
+diff -pruN fontconfig-2.13.0.orig/conf.d/25-unhint-nonlatin.conf fontconfig-2.13.0/conf.d/25-unhint-nonlatin.conf
+--- fontconfig-2.13.0.orig/conf.d/25-unhint-nonlatin.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/25-unhint-nonlatin.conf	2018-06-08 17:57:28.646447045 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Disable hinting for CJK fonts</description>
+ <!-- We can't hint CJK fonts well, so turn off hinting for CJK fonts. -->
+ 
+ 	<match target="font">
+diff -pruN fontconfig-2.13.0.orig/conf.d/30-metric-aliases.conf fontconfig-2.13.0/conf.d/30-metric-aliases.conf
+--- fontconfig-2.13.0.orig/conf.d/30-metric-aliases.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/30-metric-aliases.conf	2018-06-08 17:57:33.560523086 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Set substitutions for similar/metric-compatible families</description>
+ 
+ <!--
+ 
+diff -pruN fontconfig-2.13.0.orig/conf.d/40-nonlatin.conf fontconfig-2.13.0/conf.d/40-nonlatin.conf
+--- fontconfig-2.13.0.orig/conf.d/40-nonlatin.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/40-nonlatin.conf	2018-06-08 17:57:37.707587259 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Set substitutions for non-Latin fonts</description>
+ <!--
+   Mark common families with their generics so we'll get
+   something reasonable
+diff -pruN fontconfig-2.13.0.orig/conf.d/45-generic.conf fontconfig-2.13.0/conf.d/45-generic.conf
+--- fontconfig-2.13.0.orig/conf.d/45-generic.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/45-generic.conf	2018-06-08 17:57:41.897652096 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Set substitutions for emoji/math fonts</description>
+ 
+ <!-- Keep in sync with 60-generic.conf -->
+ 
+diff -pruN fontconfig-2.13.0.orig/conf.d/45-latin.conf fontconfig-2.13.0/conf.d/45-latin.conf
+--- fontconfig-2.13.0.orig/conf.d/45-latin.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/45-latin.conf	2018-06-08 17:57:46.222719023 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Set substitutions for Latin fonts</description>
+ <!--
+   Mark common families with their generics so we'll get
+   something reasonable
+diff -pruN fontconfig-2.13.0.orig/conf.d/49-sansserif.conf fontconfig-2.13.0/conf.d/49-sansserif.conf
+--- fontconfig-2.13.0.orig/conf.d/49-sansserif.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/49-sansserif.conf	2018-06-08 17:57:50.494785131 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Add sans-serif to the family when no generic name</description>
+ <!--
+   If the font still has no generic name, add sans-serif
+  -->
+diff -pruN fontconfig-2.13.0.orig/conf.d/50-user.conf fontconfig-2.13.0/conf.d/50-user.conf
+--- fontconfig-2.13.0.orig/conf.d/50-user.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/50-user.conf	2018-06-08 17:57:54.872852876 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Load per-user customization files</description>
+ 	<!--
+ 	    Load per-user customization files where stored on XDG Base Directory
+ 	    specification compliant places. it should be usually:
+diff -pruN fontconfig-2.13.0.orig/conf.d/51-local.conf fontconfig-2.13.0/conf.d/51-local.conf
+--- fontconfig-2.13.0.orig/conf.d/51-local.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/51-local.conf	2018-06-08 17:57:59.237920422 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Load local customization file</description>
+ 	<!-- Load local system customization file -->
+ 	<include ignore_missing="yes">local.conf</include>
+ </fontconfig>
+diff -pruN fontconfig-2.13.0.orig/conf.d/60-generic.conf fontconfig-2.13.0/conf.d/60-generic.conf
+--- fontconfig-2.13.0.orig/conf.d/60-generic.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/60-generic.conf	2018-06-08 17:58:03.405984919 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Set preferable fonts for emoji/math fonts</description>
+ <!-- Keep in sync with 45-generic.conf -->
+ 
+ <!-- Emoji -->
+diff -pruN fontconfig-2.13.0.orig/conf.d/60-latin.conf fontconfig-2.13.0/conf.d/60-latin.conf
+--- fontconfig-2.13.0.orig/conf.d/60-latin.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/60-latin.conf	2018-06-08 17:58:07.630050283 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Set preferable fonts for Latin</description>
+ 	<alias>
+ 		<family>serif</family>
+ 		<prefer>
+diff -pruN fontconfig-2.13.0.orig/conf.d/65-fonts-persian.conf fontconfig-2.13.0/conf.d/65-fonts-persian.conf
+--- fontconfig-2.13.0.orig/conf.d/65-fonts-persian.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/65-fonts-persian.conf	2018-06-08 17:58:22.987287923 +0900
+@@ -31,10 +31,6 @@
+     2008	Behdad Esfahbod:  Cleanup.  Add fantasy and cursive.
+   -->
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+ 
+ 
+ <!-- Deprecated fonts are discouraged -->
+diff -pruN fontconfig-2.13.0.orig/conf.d/65-khmer.conf fontconfig-2.13.0/conf.d/65-khmer.conf
+--- fontconfig-2.13.0.orig/conf.d/65-khmer.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/65-khmer.conf	2018-06-08 17:58:28.539373837 +0900
+@@ -1,10 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+ 	<alias>
+ 		<family>serif</family>
+ 		<prefer>
+diff -pruN fontconfig-2.13.0.orig/conf.d/65-nonlatin.conf fontconfig-2.13.0/conf.d/65-nonlatin.conf
+--- fontconfig-2.13.0.orig/conf.d/65-nonlatin.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/65-nonlatin.conf	2018-06-08 17:58:32.936441877 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Set preferable fonts for non-Latin</description>
+ 	<alias>
+ 		<family>serif</family>
+ 		<prefer>
+diff -pruN fontconfig-2.13.0.orig/conf.d/69-unifont.conf fontconfig-2.13.0/conf.d/69-unifont.conf
+--- fontconfig-2.13.0.orig/conf.d/69-unifont.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/69-unifont.conf	2018-06-08 17:58:37.092506189 +0900
+@@ -1,10 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+ 	<alias>
+ 		<family>serif</family>
+ 		<prefer>
+diff -pruN fontconfig-2.13.0.orig/conf.d/70-no-bitmaps.conf fontconfig-2.13.0/conf.d/70-no-bitmaps.conf
+--- fontconfig-2.13.0.orig/conf.d/70-no-bitmaps.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/70-no-bitmaps.conf	2018-06-08 17:58:41.897580544 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Reject bitmap fonts</description>
+ <!-- Reject bitmap fonts -->
+  <selectfont>
+   <rejectfont>
+diff -pruN fontconfig-2.13.0.orig/conf.d/70-yes-bitmaps.conf fontconfig-2.13.0/conf.d/70-yes-bitmaps.conf
+--- fontconfig-2.13.0.orig/conf.d/70-yes-bitmaps.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/70-yes-bitmaps.conf	2018-06-08 17:58:46.206647223 +0900
+@@ -1,11 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+-  <description>Accept bitmap fonts</description>
+ <!-- Accept bitmap fonts -->
+  <selectfont>
+   <acceptfont>
+diff -pruN fontconfig-2.13.0.orig/conf.d/80-delicious.conf fontconfig-2.13.0/conf.d/80-delicious.conf
+--- fontconfig-2.13.0.orig/conf.d/80-delicious.conf	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/conf.d/80-delicious.conf	2018-06-08 17:58:50.251709817 +0900
+@@ -1,10 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+ <!-- Fix-ups for Delicious family -->
+ 
+ <!-- Delicious 'heavy' variant says its Medium weight -->
+diff -pruN fontconfig-2.13.0.orig/conf.d/90-synthetic.conf fontconfig-2.13.0/conf.d/90-synthetic.conf
+--- fontconfig-2.13.0.orig/conf.d/90-synthetic.conf	2018-06-08 17:55:25.274537971 +0900
++++ fontconfig-2.13.0/conf.d/90-synthetic.conf	2018-06-08 17:58:54.259771838 +0900
+@@ -1,10 +1,6 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-    <its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-  </its:rules>
+-
+ <!-- 
+  Artificial oblique for fonts without an italic or oblique version
+  -->
+diff -pruN fontconfig-2.13.0.orig/fonts.conf.in fontconfig-2.13.0/fonts.conf.in
+--- fontconfig-2.13.0.orig/fonts.conf.in	2017-11-20 21:02:20.000000000 +0900
++++ fontconfig-2.13.0/fonts.conf.in	2018-06-08 19:55:53.912390551 +0900
+@@ -2,12 +2,6 @@
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <!-- /etc/fonts/fonts.conf file to configure system font access -->
+ <fontconfig>
+-	<its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+-		<its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
+-	</its:rules>
+-
+-	<description>Default configuration file</description>
+-
+ <!--
+ 	DO NOT EDIT THIS FILE.
+ 	IT WILL BE REPLACED WHEN FONTCONFIG IS UPDATED.

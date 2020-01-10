@@ -10,7 +10,7 @@ REL="HOME"
 HREF="t1.html"><LINK
 REL="UP"
 TITLE="FreeType specific functions"
-HREF="x102.html#AEN1393"><LINK
+HREF="x103.html#AEN1379"><LINK
 REL="PREVIOUS"
 TITLE="FcFreeTypeCharSet"
 HREF="fcfreetypecharset.html"><LINK
@@ -75,7 +75,7 @@ NAME="FCFREETYPECHARSETANDSPACING"
 ><DIV
 CLASS="REFNAMEDIV"
 ><A
-NAME="AEN1446"
+NAME="AEN1430"
 ></A
 ><H2
 >Name</H2
@@ -83,7 +83,7 @@ NAME="AEN1446"
 ><DIV
 CLASS="REFSYNOPSISDIV"
 ><A
-NAME="AEN1449"
+NAME="AEN1433"
 ></A
 ><H2
 >Synopsis</H2
@@ -92,7 +92,7 @@ CLASS="FUNCSYNOPSIS"
 ><P
 ></P
 ><A
-NAME="AEN1450"
+NAME="AEN1434"
 ></A
 ><TABLE
 BORDER="0"
@@ -140,16 +140,19 @@ CLASS="PARAMETER"
 ><DIV
 CLASS="REFSECT1"
 ><A
-NAME="AEN1461"
+NAME="AEN1445"
 ></A
 ><H2
 >Description</H2
 ><P
 >Scans a FreeType face and returns the set of encoded Unicode chars.
-This scans
-several encoding tables to build as complete a list as possible.  
-If 'blanks' is not 0, the glyphs in the font are examined and any blank glyphs
-not in 'blanks' are not placed in the returned FcCharSet.
+FcBlanks is deprecated, <TT
+CLASS="PARAMETER"
+><I
+>blanks</I
+></TT
+> is ignored and
+accepted only for compatibility with older code.
 <TT
 CLASS="PARAMETER"
 ><I
@@ -160,18 +163,6 @@ font, one of FC_MONO for a font where all glyphs have the same width,
 FC_DUAL, where the font has glyphs in precisely two widths, one twice as
 wide as the other, or FC_PROPORTIONAL where the font has glyphs of many
 widths.
-	    </P
-></DIV
-><DIV
-CLASS="REFSECT1"
-><A
-NAME="AEN1465"
-></A
-><H2
->Version</H2
-><P
->Fontconfig version 2.10.95
-
 	    </P
 ></DIV
 ><DIV
@@ -224,7 +215,7 @@ WIDTH="34%"
 ALIGN="center"
 VALIGN="top"
 ><A
-HREF="x102.html#AEN1393"
+HREF="x103.html#AEN1379"
 ACCESSKEY="U"
 >Up</A
 ></TD

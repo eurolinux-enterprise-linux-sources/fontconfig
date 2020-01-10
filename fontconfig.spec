@@ -3,7 +3,7 @@
 Summary:	Font configuration and customization library
 Name:		fontconfig
 Version:	2.10.95
-Release:	10%{?dist}
+Release:	11%{?dist}
 # src/ftglue.[ch] is in Public Domain
 # src/fccache.c contains Public Domain code
 # fc-case/CaseFolding.txt is in the UCD
@@ -33,6 +33,7 @@ BuildRequires:	fontpackages-devel
 Requires:	fontpackages-filesystem
 Requires(pre):	freetype
 Requires(post):	grep coreutils
+Requires:	font(:lang=en)
 
 %description
 Fontconfig is designed to locate fonts within the
@@ -151,6 +152,9 @@ fi
 %doc fontconfig-devel.txt fontconfig-devel
 
 %changelog
+* Fri Feb 24 2017 Akira TAGOH <tagoh@redhat.com> - 2.10.95-11
+- Add Requires: font(:lang=en) (#1403957)
+
 * Fri Sep 23 2016 Akira TAGOH <tagoh@redhat.com> - 2.10.95-10
 - Fix a regression in the previous change. (#1355930)
 
